@@ -1,0 +1,111 @@
+?   	_/Users/nil/DiskD/W/Конференции/HL++2018	[no test files]
+goos: darwin
+goarch: amd64
+BenchmarkDirect-4               	2000000000	         1.46 ns/op
+BenchmarkDefer-4                	30000000	        40.7 ns/op
+BenchmarkDirectNoInline-4       	2000000000	         1.49 ns/op
+BenchmarkDeferNoInline-4        	30000000	        40.3 ns/op
+BenchmarkDirectByPointer-4      	2000000000	         1.47 ns/op
+BenchmarkDeferByPointer-4       	30000000	        43.9 ns/op
+BenchmarkDirectAnonymous-4      	2000000000	         1.44 ns/op
+BenchmarkDeferAnonymous-4       	30000000	        40.4 ns/op
+BenchmarkStruct-4               	2000000000	         1.44 ns/op
+BenchmarkInterface-4            	2000000000	         1.88 ns/op
+BenchmarkInterfaceRuntime-4     	200000000	         9.23 ns/op
+BenchmarkSwitchIntSmall-4       	500000000	         3.26 ns/op
+BenchmarkMapIntSmall-4          	100000000	        11.7 ns/op
+BenchmarkSliceIntSmall-4        	500000000	         3.85 ns/op
+BenchmarkSwitchStringSmall-4    	100000000	        12.7 ns/op
+BenchmarkMapStringSmall-4       	100000000	        15.6 ns/op
+BenchmarkSwitchIntMedium-4      	300000000	         4.55 ns/op
+BenchmarkMapIntMedium-4         	100000000	        17.1 ns/op
+BenchmarkSliceIntMedium-4       	300000000	         3.76 ns/op
+BenchmarkSwitchStringMedium-4   	50000000	        28.5 ns/op
+BenchmarkMapStringMedium-4      	100000000	        20.3 ns/op
+BenchmarkSwitchIntLarge-4       	100000000	        13.6 ns/op
+BenchmarkMapIntLarge-4          	50000000	        34.3 ns/op
+BenchmarkSliceIntLarge-4        	100000000	        12.8 ns/op
+BenchmarkSwitchStringLarge-4    	20000000	       100 ns/op
+BenchmarkMapStringLarge-4       	30000000	        37.4 ns/op
+PASS
+ok  	_/Users/nil/DiskD/W/Конференции/HL++2018/benchmark/01_language	52.766s
+?   	_/Users/nil/DiskD/W/Конференции/HL++2018/benchmark/01_language/generator	[no test files]
+goos: darwin
+goarch: amd64
+BenchmarkDirect-4                                	2000000000	         1.49 ns/op
+BenchmarkMutex-4                                 	100000000	        16.3 ns/op
+BenchmarkAtomic-4                                	200000000	         6.72 ns/op
+BenchmarkChan-4                                  	 5000000	       239 ns/op
+BenchmarkMutexFew-4                              	   30000	     55894 ns/op
+BenchmarkAtomicFew-4                             	  100000	     14585 ns/op
+BenchmarkChanFew-4                               	    5000	    323859 ns/op
+BenchmarkChanBufferedFew-4                       	    5000	    341321 ns/op
+BenchmarkChanBufferedFullFew-4                   	   20000	     70052 ns/op
+BenchmarkMutexModerate-4                         	    2000	   2737864 ns/op
+BenchmarkAtomicModerate-4                        	   10000	    145967 ns/op
+BenchmarkChanModerate-4                          	     300	   4005547 ns/op
+BenchmarkChanBufferedModerate-4                  	     500	   4065065 ns/op
+BenchmarkChanBufferedFullModerate-4              	    2000	    616148 ns/op
+BenchmarkMutexMany-4                             	     200	  12004518 ns/op
+BenchmarkAtomicMany-4                            	    1000	   1478611 ns/op
+BenchmarkChanMany-4                              	      30	  46258216 ns/op
+BenchmarkChanBufferedMany-4                      	      20	  51046358 ns/op
+BenchmarkChanBufferedFullMany-4                  	     200	   6817606 ns/op
+BenchmarkMutexMostlyReadFew-4                    	   30000	     56402 ns/op
+BenchmarkAtomicMostlyReadFew-4                   	 1000000	      2094 ns/op
+BenchmarkChanMostlyReadFew-4                     	    3000	    442689 ns/op
+BenchmarkChanBufferedMostlyReadFew-4             	    3000	    449666 ns/op
+BenchmarkChanBufferedFullMostlyReadFew-4         	    5000	    442708 ns/op
+BenchmarkMutexMostlyWriteFew-4                   	   20000	     79708 ns/op
+BenchmarkAtomicMostlyWriteFew-4                  	  100000	     13358 ns/op
+BenchmarkChanMostlyWriteFew-4                    	    3000	    449556 ns/op
+BenchmarkChanBufferedMostlyWriteFew-4            	    3000	    445423 ns/op
+BenchmarkChanBufferedFullMostlyWriteFew-4        	    3000	    414626 ns/op
+BenchmarkMutexMostlyReadModerate-4               	    2000	    541172 ns/op
+BenchmarkAtomicMostlyReadModerate-4              	  100000	     20033 ns/op
+BenchmarkChanMostlyReadModerate-4                	     300	   5053916 ns/op
+BenchmarkChanBufferedMostlyReadModerate-4        	     300	   5404499 ns/op
+BenchmarkChanBufferedFullMostlyReadModerate-4    	     300	   5595234 ns/op
+BenchmarkMutexMostlyWriteModerate-4              	    1000	   5058714 ns/op
+BenchmarkAtomicMostlyWriteModerate-4             	   10000	    147803 ns/op
+BenchmarkChanMostlyWriteModerate-4               	     300	   6767171 ns/op
+BenchmarkChanBufferedMostlyWriteModerate-4       	     300	   5435579 ns/op
+BenchmarkChanBufferedFullMostlyWriteModerate-4   	     300	   5313290 ns/op
+BenchmarkMutexMostlyReadMany-4                   	     200	   9020158 ns/op
+BenchmarkAtomicMostlyReadMany-4                  	   10000	    173215 ns/op
+BenchmarkChanMostlyReadMany-4                    	      20	  70446382 ns/op
+BenchmarkChanBufferedMostlyReadMany-4            	      20	  71492474 ns/op
+BenchmarkChanBufferedFullMostlyReadMany-4        	      30	  65297240 ns/op
+BenchmarkMutexMostlyWriteMany-4                  	      50	  22054612 ns/op
+BenchmarkAtomicMostlyWriteMany-4                 	    1000	   1336292 ns/op
+BenchmarkChanMostlyWriteMany-4                   	      20	  53309326 ns/op
+BenchmarkChanBufferedMostlyWriteMany-4           	      30	  53755530 ns/op
+BenchmarkChanBufferedFullMostlyWriteMany-4       	      30	  55010301 ns/op
+PASS
+ok  	_/Users/nil/DiskD/W/Конференции/HL++2018/benchmark/02_stdlib	101.572s
+?   	_/Users/nil/DiskD/W/Конференции/HL++2018/benchmark/02_stdlib/regexp/email	[no test files]
+?   	_/Users/nil/DiskD/W/Конференции/HL++2018/benchmark/02_stdlib/regexp/twain	[no test files]
+goos: darwin
+goarch: amd64
+BenchmarkCreateSmallByValue-4      	  200000	      8942 ns/op
+BenchmarkCreateSmallByPointer-4    	  100000	     15985 ns/op
+BenchmarkCreateMediumByValue-4     	    2000	    862317 ns/op
+BenchmarkCreateMediumByPointer-4   	    2000	   1228130 ns/op
+BenchmarkCreateLargeByValue-4      	      30	  47398456 ns/op
+BenchmarkCreateLargeByPointer-4    	      20	  61928751 ns/op
+BenchmarkReadSmallByValue-4        	50000000	        32.2 ns/op
+BenchmarkReadSmallByPointer-4      	50000000	        30.7 ns/op
+BenchmarkReadMediumByValue-4       	50000000	        29.0 ns/op
+BenchmarkReadMediumByPointer-4     	50000000	        28.2 ns/op
+BenchmarkReadLargeByValue-4        	50000000	        28.1 ns/op
+BenchmarkReadLargeByPointer-4      	50000000	        29.0 ns/op
+PASS
+ok  	_/Users/nil/DiskD/W/Конференции/HL++2018/benchmark/03_passingparams	20.437s
+?   	_/Users/nil/DiskD/W/Конференции/HL++2018/benchmark/03_passingparams/generator	[no test files]
+goos: darwin
+goarch: amd64
+BenchmarkGob_WTF_Thats_An_Empty_Buffer-4   	 1000000	      1887 ns/op
+BenchmarkGob-4                             	  200000	      8466 ns/op	 120.94 MB/s
+BenchmarkUnsafeMut-4                       	50000000	        37.0 ns/op	27691.06 MB/s
+PASS
+ok  	_/Users/nil/DiskD/W/Конференции/HL++2018/benchmark/04_unsafe	6.660s

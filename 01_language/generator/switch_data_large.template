@@ -1,0 +1,53 @@
+package {{.}}
+
+func switchIntLarge(p int) {
+	switch p {
+		{{range numbersRange 0 1000 -}}
+	case {{.}}: func() { testInt64++ }()
+		{{end -}}
+	default:
+		panic(fmt.Errorf("Unexpected parameter: %v", p))
+	}
+}
+
+var mapIntLarge = map[int]func() {
+	{{range numbersRange 0 1000 -}}
+{{.}}: func() { testInt64++ },
+	{{end -}}
+}
+
+var sliceIntLarge = []func() {
+	{{range numbersRange 0 1000 -}}
+	func() { testInt64++ },
+	{{end -}}
+}
+
+var randIntLarge = []int {
+{{range numbersRange 0 1000 -}}
+	{{randIntn 1000}},
+{{end -}}
+}
+
+func switchStringLarge(p string) {
+	switch p {
+		{{range numbersRange 0 1000 -}}
+	case "{{.}}": func() { testInt64++ }()
+		{{end -}}
+	default:
+		panic(fmt.Errorf("Unexpected parameter: %v", p))
+	}
+}
+
+var mapStringLarge = map[string]func() {
+	{{range numbersRange 0 1000 -}}
+	"{{.}}": func() { testInt64++ },
+	{{end -}}
+}
+
+var randStringLarge = []string {
+	{{range numbersRange 0 1000 -}}
+		"{{randIntn 1000}}",
+	{{end -}}
+	}
+	
+	

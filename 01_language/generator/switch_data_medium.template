@@ -1,0 +1,53 @@
+package {{.}}
+
+func switchIntMedium(p int) {
+	switch p {
+		{{range numbersRange 0 100 -}}
+	case {{.}}: func() { testInt64++ }()
+		{{end -}}
+	default:
+		panic(fmt.Errorf("Unexpected parameter: %v", p))
+	}
+}
+
+var mapIntMedium = map[int]func() {
+	{{range numbersRange 0 100 -}}
+{{.}}: func() { testInt64++ },
+	{{end -}}
+}
+
+var sliceIntMedium = []func() {
+	{{range numbersRange 0 100 -}}
+	func() { testInt64++ },
+	{{end -}}
+}
+
+var randIntMedium = []int {
+{{range numbersRange 0 100 -}}
+	{{randIntn 100}},
+{{end -}}
+}
+
+func switchStringMedium(p string) {
+	switch p {
+		{{range numbersRange 0 100 -}}
+	case "{{.}}": func() { testInt64++ }()
+		{{end -}}
+	default:
+		panic(fmt.Errorf("Unexpected parameter: %v", p))
+	}
+}
+
+var mapStringMedium = map[string]func() {
+	{{range numbersRange 0 100 -}}
+	"{{.}}": func() { testInt64++ },
+	{{end -}}
+}
+
+var randStringMedium = []string {
+	{{range numbersRange 0 100 -}}
+		"{{randIntn 100}}",
+	{{end -}}
+	}
+	
+	

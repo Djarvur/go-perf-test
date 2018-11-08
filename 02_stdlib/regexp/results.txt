@@ -1,0 +1,22 @@
++ go run testTwain.go
+testing on 20045118 bytes
+stdlib regexp with compile: 25.326921886s
+dlclark/regexp2 with compile: 42.230281699s
+gijsbers/go-pcre with compile: 16.69378113s
+stdlib regexp: 27.726456884s
+dlclark/regexp2: 42.257684686s
+gijsbers/go-pcre: 19.155188214s
++ perl testTwain.pl
+testing on 20045118 bytes
+perl regexp: 11.906686s
++ go run testEMail.go
+testing on 2267227 bytes
+stdlib regexp with compile: 0.360359s, 99992 found
+dlclark/regexp2 with compile: 0.121689s, 99992 found
+gijsbers/go-pcre with compile: 0.073804s, 99992 found
+stdlib regexp: 0.414939s, 99992 found
+dlclark/regexp2: 0.122988s, 99992 found
+gijsbers/go-pcre: 0.071869s, 99992 found
++ perl testEMail.pl
+testing on 2267227 bytes
+perl regexp: 0.097468s, 99992 found

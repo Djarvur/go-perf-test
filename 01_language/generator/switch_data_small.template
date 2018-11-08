@@ -1,0 +1,53 @@
+package {{.}}
+
+func switchIntSmall(p int) {
+	switch p {
+		{{range numbersRange 0 10 -}}
+	case {{.}}: func() { testInt64++ }()
+		{{end -}}
+	default:
+		panic(fmt.Errorf("Unexpected parameter: %v", p))
+	}
+}
+
+var mapIntSmall = map[int]func() {
+	{{range numbersRange 0 10 -}}
+{{.}}: func() { testInt64++ },
+	{{end -}}
+}
+
+var sliceIntSmall = []func() {
+	{{range numbersRange 0 10 -}}
+	func() { testInt64++ },
+	{{end -}}
+}
+
+var randIntSmall = []int {
+{{range numbersRange 0 10 -}}
+	{{randIntn 10}},
+{{end -}}
+}
+
+func switchStringSmall(p string) {
+	switch p {
+		{{range numbersRange 0 10 -}}
+	case "{{.}}": func() { testInt64++ }()
+		{{end -}}
+	default:
+		panic(fmt.Errorf("Unexpected parameter: %v", p))
+	}
+}
+
+var mapStringSmall = map[string]func() {
+	{{range numbersRange 0 10 -}}
+	"{{.}}": func() { testInt64++ },
+	{{end -}}
+}
+
+var randStringSmall = []string {
+	{{range numbersRange 0 10 -}}
+		"{{randIntn 10}}",
+	{{end -}}
+	}
+	
+	
