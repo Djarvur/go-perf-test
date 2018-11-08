@@ -26,7 +26,7 @@ func incDefer() {
 
 func BenchmarkDirectNoInline(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		incDirect()
+		incDirectNoInline()
 	}
 }
 
@@ -37,7 +37,7 @@ func incDirectNoInline() {
 
 func BenchmarkDeferNoInline(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		incDefer()
+		incDeferNoInline()
 	}
 }
 
