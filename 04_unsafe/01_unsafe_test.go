@@ -26,7 +26,7 @@ func encodeMut(data []uint64) (res []byte) {
 		len:  sz,
 		cap:  sz,
 	}
-	res = *(*[]byte)(unsafe.Pointer(&rh))
+	res = *(*[]byte)(unsafe.Pointer(rh))
 	return
 }
 
