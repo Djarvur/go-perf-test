@@ -109,3 +109,8 @@ BenchmarkGob-4                             	  200000	      8466 ns/op	 120.94 MB
 BenchmarkUnsafeMut-4                       	50000000	        37.0 ns/op	27691.06 MB/s
 PASS
 ok  	_/Users/nil/DiskD/W/Конференции/HL++2018/benchmark/04_unsafe	6.660s
+
+// loop involves similar actions working with template maps/slices/arrays, so we have to understand the difference
+Benchmark_mapLoop/map_based_loop-4         	 3000000	       415 ns/op	       0 B/op	       0 allocs/op
+Benchmark_mapLoop/slice_based_loop-4       	10000000	       140 ns/op	       0 B/op	       0 allocs/op
+Benchmark_mapLoop/array_based_loop-4       	500000000	         3.37 ns/op	       0 B/op	       0 allocs/op
