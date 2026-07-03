@@ -19,4 +19,9 @@ jobs:
           cache: true
       - run: go build ./...
       - run: go test -race -coverprofile=coverage.out -covermode=atomic ./...
+
+      - name: Run govulncheck
+        run: |
+          go install golang.org/x/vuln/cmd/govulncheck@latest
+          govulncheck ./...
       - run: go tool cover -func=coverage.out
